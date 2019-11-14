@@ -1,4 +1,6 @@
 .list {
+  $self: &;
+
   margin-bottom: 30px;
 
   &__add-button {
@@ -14,6 +16,28 @@
     align-items: center;
     cursor: pointer;
     padding: 10px 12px;
+    transition: background-color 0.15s ease-in-out;
+
+    &:hover #{$self}__remove-icon {
+      opacity: 0.2;
+    }
+
+    #{$self}__remove-icon {
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    span {
+      flex: 1;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
 
     &.active {
       background: #ffffff;
