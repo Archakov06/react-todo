@@ -13,8 +13,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 750px;
-  height: 530px;
+  width: calc(100vw - 30px);
+  height: calc(100vh - 100px);
   transform: translate(-50%, -50%);
   box-shadow: 1px 2px 20px #f3f3f3;
   border-radius: 10px;
@@ -32,6 +32,7 @@
   &__tasks {
     flex: 1;
     padding: 60px;
+    overflow: auto;
   }
 }
 
