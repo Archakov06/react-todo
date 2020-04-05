@@ -14,7 +14,8 @@ const AddTaskForm = ({ list, onAddTask }) => {
   };
 
   const addTask = () => {
-    const obj = {
+    if(inputValue) {
+      const obj = {
       listId: list.id,
       text: inputValue,
       completed: false
@@ -32,6 +33,11 @@ const AddTaskForm = ({ list, onAddTask }) => {
       .finally(() => {
         setIsLoading(false);
       });
+    }
+    else {
+      alert('введите название задачи!');
+      setIsLoading(false);
+    }
   };
 
   return (
